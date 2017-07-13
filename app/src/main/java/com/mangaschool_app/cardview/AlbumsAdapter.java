@@ -102,7 +102,7 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
 
-        public ImageView thumbnail, overflow;
+        public ImageView thumbnail;
 
 
 
