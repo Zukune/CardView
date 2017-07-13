@@ -128,41 +128,11 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
 
                         Album clickedDataItem = albumList.get(pos);
 
-                       // Intent intent = new Intent(mContext, DetailActivity.class);
-                        // intent.putExtra("thumbnail", albumList.get(pos).getThumbnail());
-                        //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        // mContext.startActivity(intent);
-                        final Intent intent;
-                        switch (getAdapterPosition()){
-                            case 0:
-                                intent =  new Intent(mContext, Slidershow.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                intent.putExtra("Position", albumList.get(pos).getName());
-                                break;
-
-                            case 1:
-                                intent =  new Intent(mContext, SecondActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                break;
-                            case 2:
-                                intent =  new Intent(mContext, SecondActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                break;
-                            case 3:
-                                intent =  new Intent(mContext, SecondActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                break;
-                            case 4:
-                                intent =  new Intent(mContext, SecondActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                break;
-
-                            default:
-                                intent =  new Intent(mContext, DetailActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                break;
-                        }
+                       Intent intent = new Intent(mContext, Slidershow.class);
+                        intent.putExtra("album", albumList.get(pos).getClass());
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         mContext.startActivity(intent);
+
 
                     }
 

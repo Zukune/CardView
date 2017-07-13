@@ -1,5 +1,6 @@
 package com.mangaschool_app.cardview;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,9 +28,12 @@ public class Slidershow extends AppCompatActivity implements  ViewPagerEx.OnPage
         setContentView(R.layout.activity_slidershow);
 
 
+
         sliderLayout = (SliderLayout) findViewById(R.id.slider);
 
+        String album  = getIntent().getExtras().getString("album");
 
+        
 
         urlList.add("http://imageshack.com/a/img922/6719/xLjXwa.jpg");
         urlList.add("http://imageshack.com/a/img923/6757/M70jrN.jpg");
@@ -55,6 +59,8 @@ public class Slidershow extends AppCompatActivity implements  ViewPagerEx.OnPage
 
 
     }
+
+
 
     @Override
     protected void onStop() {
