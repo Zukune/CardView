@@ -129,7 +129,7 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
                         Album clickedDataItem = albumList.get(pos);
 
                        Intent intent = new Intent(mContext, Slidershow.class);
-                        intent.putExtra("album", albumList.get(pos).getClass());
+                        intent.putExtra("album", getAdapterPosition());
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         mContext.startActivity(intent);
 

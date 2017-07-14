@@ -13,13 +13,11 @@ import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
 import java.util.ArrayList;
 
-public class Slidershow extends AppCompatActivity implements  ViewPagerEx.OnPageChangeListener{
+public class Slidershow extends AppCompatActivity implements  ViewPagerEx.OnPageChangeListener {
 
 
     SliderLayout sliderLayout;
     ArrayList<String> urlList = new ArrayList();
-
-
 
 
     @Override
@@ -27,49 +25,53 @@ public class Slidershow extends AppCompatActivity implements  ViewPagerEx.OnPage
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slidershow);
 
-        String album  = getIntent().getExtras().getString("album");
 
-        switch (album) {
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String album = extras.getString("");
 
-            case "0":
-                urlList.add("http://imageshack.com/a/img922/6719/xLjXwa.jpg");
-                urlList.add("http://imageshack.com/a/img922/6719/xLjXwa.jpg");
-                urlList.add("http://imageshack.com/a/img922/6719/xLjXwa.jpg");
-                urlList.add("http://imageshack.com/a/img922/6719/xLjXwa.jpg");
-                break;
-            case "1":
-                urlList.add("http://imageshack.com/a/img923/6757/M70jrN.jpg");
-                urlList.add("http://imageshack.com/a/img923/6757/M70jrN.jpg");
-                urlList.add("http://imageshack.com/a/img923/6757/M70jrN.jpg");
-                urlList.add("http://imageshack.com/a/img923/6757/M70jrN.jpg");
 
-                break;
+            switch (album) {
 
-            case "2":
-                urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
-                urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
-                urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
-                urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpgg");
+                case "0":
+                    urlList.add("http://imageshack.com/a/img922/6719/xLjXwa.jpg");
+                    urlList.add("http://imageshack.com/a/img922/6719/xLjXwa.jpg");
+                    urlList.add("http://imageshack.com/a/img922/6719/xLjXwa.jpg");
+                    urlList.add("http://imageshack.com/a/img922/6719/xLjXwa.jpg");
+                    break;
+                case "1":
+                    urlList.add("http://imageshack.com/a/img923/6757/M70jrN.jpg");
+                    urlList.add("http://imageshack.com/a/img923/6757/M70jrN.jpg");
+                    urlList.add("http://imageshack.com/a/img923/6757/M70jrN.jpg");
+                    urlList.add("http://imageshack.com/a/img923/6757/M70jrN.jpg");
 
-                break;
-            case "3":
-                urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
-                urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
-                urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
-                urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
+                    break;
 
-                break;
-            case "4":
-                urlList.add("http://imageshack.com/a/img922/5769/WtMb5K.jpg");
-                urlList.add("http://imageshack.com/a/img922/5769/WtMb5K.jpg");
-                urlList.add("http://imageshack.com/a/img922/5769/WtMb5K.jpg");
-                urlList.add("http://imageshack.com/a/img922/5769/WtMb5K.jpg");
-                urlList.add("http://imageshack.com/a/img922/5769/WtMb5K.jpg");
+                case "2":
+                    urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
+                    urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
+                    urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
+                    urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpgg");
 
-                break;
-            default:
-                break;
-        }
+                    break;
+                case "3":
+                    urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
+                    urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
+                    urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
+                    urlList.add("http://imageshack.com/a/img922/2751/85KVWm.jpg");
+
+                    break;
+                case "4":
+                    urlList.add("http://imageshack.com/a/img922/5769/WtMb5K.jpg");
+                    urlList.add("http://imageshack.com/a/img922/5769/WtMb5K.jpg");
+                    urlList.add("http://imageshack.com/a/img922/5769/WtMb5K.jpg");
+                    urlList.add("http://imageshack.com/a/img922/5769/WtMb5K.jpg");
+                    urlList.add("http://imageshack.com/a/img922/5769/WtMb5K.jpg");
+
+                    break;
+                default:
+                    break;
+            }
 
             sliderLayout = (SliderLayout) findViewById(R.id.slider);
 
@@ -91,33 +93,38 @@ public class Slidershow extends AppCompatActivity implements  ViewPagerEx.OnPage
             }
 
 
-
         }
 
 
 
-    @Override
-    protected void onStop() {
-
-        sliderLayout.stopAutoCycle();
-
-        super.onStop();
     }
 
+        @Override
+        protected void onStop () {
+
+            sliderLayout.stopAutoCycle();
+
+            super.onStop();
+
+    }
 
     @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
 
     @Override
     public void onPageSelected(int position) {
-
         Log.d("Slider Demo", "Page Changed: " + position);
+
+
     }
 
     @Override
-    public void onPageScrollStateChanged(int state) {}
-}
+    public void onPageScrollStateChanged(int state) {
 
+    }
+}
 
 
 
